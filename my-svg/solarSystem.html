@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 100vh;
+            position: absolute;
+            width: 100vw;
+            background-color: black;
+        }
+        .planet{
+            width: var(--diameter);
+            height: var(--diameter);
+            border-radius: 50%;
+            top: calc(50% - var(--diameter) / 2);
+            left: calc(50% - var(--diameter) / 2);
+            position: absolute;
+        }
+        .sun {
+            --diameter: 100px;
+            background-image: radial-gradient( red 10%, orange 70%, yellow 90%)
+        }
+        .mer{
+            --diameter: 20px;
+            --mov:100px;
+            background-color: red;
+            animation: solarSystem 2s infinite linear;
+        }
+        .venus{
+            --diameter: 40px;
+            --mov:150px;
+            background-color: rgba(0, 110, 255, 0.637);
+            animation: solarSystem 3s infinite linear;
+        }
+        .earth{
+            --diameter: 45px;
+            --mov:200px;
+            background-color: blue;
+            animation: solarSystem 4s infinite linear;
+        }
+        .mars{
+            --diameter: 20px;
+            --mov:250px;
+            background-color: red;
+            animation: solarSystem 5s infinite linear;
+        }
+        .jupi{
+            --diameter: 70px;
+            --mov:380px;
+            background-color: palegreen;
+            animation: solarSystem 8s infinite linear;
+        }
+        .sat{
+            --diameter: 80px;
+            --mov:470px;
+            background-image: radial-gradient(purple 40%, white 55%, brown 70%,white 90%);
+            animation: solarSystem 10s infinite linear;
+        }
+        .com{
+            --diameter: 5px;
+            background-color: beige;
+        }
+        .clus{
+            --mov:300px;
+            animation: com-clus 6.5s infinite linear;
+        }
+        @keyframes solarSystem {
+            from{transform: rotate(0deg) translate(var(--mov));}
+            to{transform: rotate(360deg) translate(var(--mov));}
+        }
+        @keyframes com-clus {
+            from{transform: rotate(0deg) translate(var(--mov));}
+            to{transform: rotate(360deg) translate(var(--mov));}
+        }
+    </style>
+</head>
+<body>
+    <div class="planet sun"></div>
+    <div class="planet mer"></div>
+    <div class="planet venus"></div>
+    <div class="planet earth"></div>
+    <div class="planet mars"></div>
+    <div class="planet jupi"></div>
+    <div class="planet sat"></div>
+    <div class="clus">
+        <div class="planet com"></div>
+    </div>
+</body>
+</html>
